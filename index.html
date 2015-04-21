@@ -7,6 +7,67 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<link rel="stylesheet" href="components/shower-ribbon/styles/screen.css">
 	<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+	<style>
+		.grid{
+			margin-top: -30px;
+			display: flex;
+			flex-flow: wrap;
+		}
+		.grid .flex-container{
+			position: relative;
+			flex: 1 0 300px;
+			height: 200px;
+		}
+		.grid .item{
+			margin: auto;
+		}
+
+		.no-margin{
+			margin: 0;
+		}
+		h3{
+			position: relative;
+			top: -40px;
+		}
+		.flex-container{
+			height: 400px;
+			background: #1D1F20;
+			display: flex;
+			border: 3px solid white;
+		}
+		.item{
+		  width: 100px;
+		  height: 100px;
+		  background: #efb34d;
+		  text-align: center;
+		  font-size: 30px;
+		  border: 3px solid white;
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		}
+		.item:first-of-type{
+		  background: yellowgreen;
+		}
+		.item:last-of-type{
+		  background: coral;
+		}
+			.split .wrapper{
+				display: flex;
+			}
+			.split .item{
+				margin: auto;
+			}
+			.split .wrapper .flex-container{
+			  flex-grow: 3;
+			  flex-basis: 0;
+			}
+			.split .code{
+			  flex-grow: 2;
+			  flex-basis: 0;
+			  margin-left: 70px;
+			}
+	</style>
 </head>
 <body class="list">
 	<header class="caption">
@@ -36,32 +97,136 @@
 		<h2>Что скажет W3C?</h2>
 		<blockquote>In the flex layout model, the children of a flex container can be laid out in any direction, and can “flex” their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily <mark>manipulated</mark>.</blockquote>
 	</div></article>
-	<article class="slide shout"><div>
-		<h2>Но кому нужен W3C?</h2>
-	</div></article>
-	<article class="slide"><div>
+<!-- 	<article class="slide shout"><div>
+	<h2>Но кому нужен W3C?</h2>
+</div></article> -->
+	<article class="slide" id="flexboxCan1"><div>
 		<h2>Flexbox умеет так</h2>
-		<p data-height="400" data-theme-id="0" data-slug-hash="OVLrRj" data-default-tab="result" data-user="SakerONE" class='codepen'>See the Pen <a href='http://codepen.io/SakerONE/pen/OVLrRj/'>OVLrRj</a> by Artem Svirskyi (<a href='http://codepen.io/SakerONE'>@SakerONE</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+		<div class="flex-container">
+		  <div class="item">1</div>
+		  <div class="item">2</div>
+		  <div class="item">3</div>
+		  <div class="item">4</div>
+		  <div class="item">5</div>
+		</div>
+
+		<style>
+			#flexboxCan1 .item{
+				margin: auto;
+			}
+		</style>
 	</div></article>
-	<article class="slide"><div>
+	<article class="slide" id="flexboxCan2"><div>
 		<h2>И так</h2>
-		<p data-height="400" data-theme-id="0" data-slug-hash="MwgZbZ" data-default-tab="result" data-user="SakerONE" class='codepen'>See the Pen <a href='http://codepen.io/SakerONE/pen/MwgZbZ'>MwgZbZ</a> by Artem Svirskyi (<a href='http://codepen.io/SakerONE'>@SakerONE</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+		<div class="flex-container">
+		  <div class="item">1</div>
+		  <div class="item">2</div>
+		  <div class="item">3</div>
+		  <div class="item">4</div>
+		  <div class="item">5</div>
+		</div>
+
+		<style>
+			#flexboxCan2 .flex-container{
+				flex-direction: row-reverse;
+			}
+			#flexboxCan2 .item{
+				margin: auto;
+			}
+		</style>
 	</div></article>
-	<article class="slide"><div>
+	<article class="slide" id="flexboxCan3"><div>
 		<h2>И вот так</h2>
-		<p data-height="400" data-theme-id="0" data-slug-hash="aOoPwb" data-default-tab="result" data-user="SakerONE" class='codepen'>See the Pen <a href='http://codepen.io/SakerONE/pen/aOoPwb'>aOoPwb</a> by Artem Svirskyi (<a href='http://codepen.io/SakerONE'>@SakerONE</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+		<div class="flex-container">
+		  <div class="item">1</div>
+		  <div class="item">2</div>
+		  <div class="item">3</div>
+		  <div class="item">4</div>
+		  <div class="item">5</div>
+		</div>
+
+		<style>
+			#flexboxCan3 .flex-container{
+				flex-direction: column-reverse;
+			}
+			#flexboxCan3 .item{
+				margin: auto;
+				display: flex;
+				line-height: initial;
+				justify-content: center;
+				align-items: center;
+			}
+			#flexboxCan3 .item:last-of-type{
+				order: -1;
+			}
+		</style>
 	</div></article>
-	<article class="slide"><div>
+	<article class="slide" id="flexboxCan4"><div>
 		<h2>И этак</h2>
-		<p data-height="400" data-theme-id="0" data-slug-hash="dobwNM" data-default-tab="result" data-user="SakerONE" class='codepen'>See the Pen <a href='http://codepen.io/SakerONE/pen/dobwNM'>dobwNM</a> by Artem Svirskyi (<a href='http://codepen.io/SakerONE'>@SakerONE</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+		<div class="flex-container">
+		  <div class="item">1</div>
+		  <div class="item">2</div>
+		  <div class="item">3</div>
+		  <div class="item">4</div>
+		  <div class="item">5</div>
+		  <div class="item">6</div>
+		  <div class="item">7</div>
+		  <div class="item">8</div>
+		  <div class="item">9</div>
+		</div>
+
+		<style>
+			#flexboxCan4 .flex-container{
+				flex-flow: wrap;
+			}
+			#flexboxCan4 .item{
+				margin: auto;
+			}
+		</style>
 	</div></article>
-	<article class="slide"><div>
+	<article class="slide" id="flexboxCan5"><div>
 		<h2>И вот этак</h2>
-		<p data-height="400" data-theme-id="0" data-slug-hash="rVBojb" data-default-tab="result" data-user="SakerONE" class='codepen'>See the Pen <a href='http://codepen.io/SakerONE/pen/rVBojb'>rVBojb</a> by Artem Svirskyi (<a href='http://codepen.io/SakerONE'>@SakerONE</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+		<div class="flex-container">
+		  <div class="item">1</div>
+		  <div class="item">2</div>
+		  <div class="item">3</div>
+		  <div class="item">4</div>
+		  <div class="item">5</div>
+		  <div class="item">6</div>
+		  <div class="item">7</div>
+		  <div class="item">8</div>
+		  <div class="item">9</div>
+		</div>
+
+		<style>
+			#flexboxCan5 .flex-container{
+				flex-flow: wrap;
+			}
+			#flexboxCan5 .item{
+				/*margin: auto;*/
+				flex: 1 100px;
+				height: initial;
+			}
+		</style>
 	</div></article>
-	<article class="slide"><div>
+	<article class="slide" id="flexboxCan6"><div>
 		<h2>И, при желании, даже так</h2>
-		<p data-height="400" data-theme-id="0" data-slug-hash="dPEjJp" data-default-tab="result" data-user="SakerONE" class='codepen'>See the Pen <a href='http://codepen.io/SakerONE/pen/dPEjJp'>dPEjJp</a> by Artem Svirskyi (<a href='http://codepen.io/SakerONE'>@SakerONE</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+		<div class="flex-container">
+		  <div class="item floor">1</div>
+		  <div class="item soar">2</div>
+		  <div class="item">3</div>
+		  <div class="item soar">4</div>
+		  <div class="item floor">5</div>
+		</div>
+
+		<style>
+			#flexboxCan6 .floor{
+			  margin-top: auto;
+			}
+			#flexboxCan6 .soar{
+			  margin: auto auto;
+			}
+		</style>
 	</div></article>
 	<article class="slide shout"><div>
 		<h2>И многое<br>другое...</h2>
@@ -69,18 +234,56 @@
 	<article class="slide shout"><div>
 		<h2>Жизнь без Flexbox</h2>
 	</div></article>
-	<article class="slide"><div>
+	<article class="slide floats"><div>
 		<h2>Сверстаем 3 дива горизонтально</h2>
-		<p data-height="400" data-theme-id="0" data-slug-hash="BNBmrQ" data-default-tab="result" data-user="SakerONE" class='codepen'>See the Pen <a href='http://codepen.io/SakerONE/pen/BNBmrQ/'>BNBmrQ</a> by Artem Svirskyi (<a href='http://codepen.io/SakerONE'>@SakerONE</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+		<div class="float-container">
+		  <div class="float-item"></div>
+		  <div class="float-item"></div>
+		  <div class="float-item"></div>
+		</div>
+		<style>
+			.floats .float-container{
+			  outline: 2px solid red;
+			  overflow: hidden;
+			}
+			.floats .float-item{
+			  height: 350px;
+			  width: 33.33333333333333%;
+			  box-sizing: border-box;
+			  border: 10px solid white;
+			  background: gold;
+			  float: left;
+			  font-size: 30px;
+			  font-family: monospace;
+			  display: flex;
+			  align-items: center;
+			  justify-content: center;
+			}
+		</style>
 	</div></article>
-	<article class="slide"><div>
+	<article class="slide floats"><div>
 		<h2>Флоаты ожидание</h2>
-		<p data-height="360" data-theme-id="0" data-slug-hash="JdPxbN" data-default-tab="result" data-user="SakerONE" class='codepen'>See the Pen <a href='http://codepen.io/SakerONE/pen/JdPxbN/'>JdPxbN</a> by Artem Svirskyi (<a href='http://codepen.io/SakerONE'>@SakerONE</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+		<div class="float-container">
+		  <div class="float-item">float: left;</div>
+		  <div class="float-item">float: left;</div>
+		  <div class="float-item">float: left;</div>
+		</div>
 	</div></article>
-	<article class="slide"><div>
+	<article class="slide floats real"><div>
 		<h2>Флоаты реальность</h2>
-		<p data-height="360" data-theme-id="0" data-slug-hash="EjYrWZ" data-default-tab="result" data-user="SakerONE" class='codepen'>See the Pen <a href='http://codepen.io/SakerONE/pen/EjYrWZ'>EjYrWZ</a> by Artem Svirskyi (<a href='http://codepen.io/SakerONE'>@SakerONE</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+		<div class="float-container">
+		  <div class="float-item">float: left;</div>
+		  <div class="float-item">float: left;</div>
+		  <div class="float-item">float: left;</div>
+		</div>
 		<p>Высота контейнера - 0</p>
+
+		<style>
+			.real .float-container{
+				overflow: initial;
+			}
+		</style>
+
 	</div></article>
 	<article class="slide cover h w"><div>
 		<img src="images/pain.jpg" alt="">
@@ -139,6 +342,150 @@
 	</div></article>
 	<article class="slide shout"><div>
 		<h2>Теперь подробнее</h2>
+	</div></article>
+	<article class="slide"><div>
+		<h2>Субъекты</h2>
+		<div class="actors"></div>
+		<style>
+			.actors{
+				height: 400px;
+				background: url('images/actors.png');
+				background-size: 100% 100%;
+			}
+		</style>
+	</div></article>
+	<article class="slide"><div>
+		<h2>HTML</h2>
+
+		<pre>
+			<code>&lt;div class="<mark>container</mark>"&gt;</code>
+			<code>	&lt;div class="<mark>item</mark>"&gt;1&lt;/div></code>
+			<code>	&lt;div class="<mark>item</mark>"&gt;2&lt;/div></code>
+			<code>	&lt;div class="<mark>item</mark>"&gt;3&lt;/div></code>
+			<code>	&lt;div class="<mark>item</mark>"&gt;4&lt;/div></code>
+			<code>	&lt;div class="<mark>item</mark>"&gt;5&lt;/div></code>
+			<code>&lt;/div></code>
+
+		</pre>
+
+		<style>
+			.actors{
+				height: 400px;
+				background: url('images/actors.png');
+				background-size: 100% 100%;
+			}
+		</style>
+	</div></article>
+	<article class="slide cover w h"><div>
+		<img src="images/props.jpg" alt="">
+	</div></article>
+	<article class="slide split"><div>
+		<h2>Display</h2>
+
+		<div class="wrapper">
+
+
+			<div class="flex-container">
+			  <div class="item">1</div>
+			  <div class="item">2</div>
+			  <div class="item">3</div>
+			</div>
+			<pre class="code">
+				<code>.container{</code>
+				<code>	display: flex;</code>
+				<code>}</code>
+			</pre>
+		</div>
+
+		<style>
+			.split .flex-container{
+				height: 250px;
+			}
+		</style>
+	</div></article>
+	<article class="slide shout w h" id="coords"><div>
+		<img src="images/flex-direction-terms.svg" alt="">
+
+		<style>
+			#coords img{
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</div></article>
+	<article class="slide" id="direction"><div>
+		<h2 class="no-margin">flex-direction</h2>
+		<h3>Направление главной оси (свойство контейнера)</h3>
+
+		<div class="grid">
+			<div class="flex-container row">
+				<div class="item">1</div>
+				<div class="item">2</div>
+				<div class="item">3</div>
+			</div>
+			<div class="flex-container row-reverse">
+				<div class="item">1</div>
+				<div class="item">2</div>
+				<div class="item">3</div>
+			</div>
+			<div class="flex-container column">
+				<div class="item">1</div>
+				<div class="item">2</div>
+				<div class="item">3</div>
+			</div>
+			<div class="flex-container column-reverse">
+				<div class="item">1</div>
+				<div class="item">2</div>
+				<div class="item">3</div>
+			</div>
+		</div>
+
+		<style>
+			#direction .flex-container::before{
+				color: white;
+				position: absolute;
+				left: 10px;
+				font-family: monospace;
+				font-size: 22px;
+			}
+			#direction .row::before{
+				content: "flex-direction: row; (default)";
+			}
+			#direction .row-reverse{
+				flex-direction: row-reverse;
+			}
+			#direction .row-reverse::before{
+				content: "flex-direction: row-reverse;";
+			}
+			#direction .column{
+				flex-direction: column;
+			}
+			#direction .column::before{
+				top: 0;
+				content: "flex-direction: column;";
+			}
+			#direction .column-reverse{
+				flex-direction: column-reverse;
+			}
+			#direction .column-reverse::before{
+				content: "flex-direction: column-reverse;";
+				top: 0;
+			}
+			#direction .column .item,
+			#direction .column-reverse .item{
+				height: 30px;
+				margin: 0 auto;
+			}
+			#direction .column{
+				justify-content: flex-end;
+			}
+		</style>
+
 	</div></article>
 	<!-- <p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p> -->
 	<!--
