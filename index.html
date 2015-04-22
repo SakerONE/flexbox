@@ -627,6 +627,445 @@
 		<img src="images/align-content.svg" style="display: block; margin: 0 auto" width="500" alt="">
 
 	</div></article>
+	<article class="slide split order"><div>
+		<h2>order</h2>
+
+		<!-- <div class="wrapper"> -->
+			<div class="flex-container" style="height: 200px;">
+				<div class="item">0</div>
+				<div class="item">0</div>
+				<div class="item">0</div>
+			</div>
+		<!-- </div> -->
+
+		<style>
+			.order .item{
+				margin: auto;
+			}
+		</style>
+	</div></article>
+	<article class="slide split order"><div>
+		<h2>order</h2>
+
+		<div class="wrapper">
+			<div class="flex-container" style="height: 200px;">
+				<div class="item">1</div>
+				<div class="item">0</div>
+				<div class="item">-1</div>
+			</div>
+			<pre class="code">
+				<code>.item:first-of-type{</code>
+				<code>	order: 1;</code>
+				<code>}</code>
+				<code>.item:last-of-type{</code>
+				<code>	order: -1;</code>
+				<code>}</code>
+			</pre>
+		</div>
+
+		<style>
+			.order .item:first-of-type{
+				order: 1;
+			}
+			.order .item:last-of-type{
+				order: -1;
+			}
+		</style>
+
+	</div></article>
+	<article class="slide shout"><div>
+		<h2>flex</h2>
+	</div></article>
+	<article class="slide" id="flexAnim"><div>
+		<div class="flex-container">
+			<div class="item">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+		</div>
+
+		<style>
+			#flexAnim .item{
+				flex: 1;
+				height: initial;
+				margin: 10px;
+			}
+			#flexAnim .flex-container{
+				-webkit-animation: flex-anim 2s infinite alternate;
+				-webkit-transform: translate3d(0, 0, 0);
+				position: absolute;
+			}
+			@-webkit-keyframes flex-anim{
+				from{
+					width: 200px;
+				}
+				to{
+					width: 800px;
+				}
+			}
+		</style>
+
+	</div></article>
+	<article class="slide pr-vs-flex"><div>
+	<h2>width: 25%</h2>
+		<div class="flex-container">
+			<div class="item">25%</div>
+			<div class="item">25%</div>
+			<div class="item">25%</div>
+			<div class="item">25%</div>
+		</div>
+
+		<style>
+			.pr-vs-flex .item{
+				flex: 1;
+				height: initial;
+				margin: 10px;
+			}
+		</style>
+
+	</div></article>
+	<article class="slide pr-vs-flex"><div>
+	<h2>flex: 1</h2>
+		<div class="flex-container">
+			<div class="item">1</div>
+			<div class="item">1</div>
+			<div class="item">1</div>
+			<div class="item">1</div>
+		</div>
+
+		<style>
+			.pr-vs-flex .item{
+				flex: 1;
+				height: initial;
+				margin: 10px;
+			}
+		</style>
+
+	</div></article>
+	<article class="slide"><div>
+		<h2>Flex shorthand</h2>
+
+			<code style="font-size: 21px; white-space: nowrap;">flex: none | [ &lt;'flex-grow'> &lt;'flex-shrink'>? || &lt;'flex-basis'> ]</code>
+			<h3>По умолчанию:</h3>
+			<code style="font-size: 21px;">flex: 0 1 auto;</code>
+	</div></article>
+	<article class="slide"><div>
+		<h2>flex-basis</h2>
+		<ul>
+			<li>Изначальная <mark>ширина или высота</mark> элемента <br>(в зависимости от flex-direction)</li>
+			<li>По умолчанию <code>auto</code></li>
+		</ul>
+
+		<pre>
+			<code>.item{</code>
+			<code>	flex-basis: 100px;</code>
+			<code>}</code>
+		</pre>
+
+	</div></article>
+	<article class="slide split" id="grow"><div>
+		<h2>flex-grow</h2>
+
+		<div class="wrapper">
+			<div class="flex-container">
+				<div class="item"></div>
+				<div class="item"></div>
+				<div class="item"></div>
+			</div>
+			<pre class="code">
+				<code>.container{</code>
+				<code>	width: 300px;</code>
+				<code>}</code>
+				<code>.item{</code>
+				<code>	flex-basis: 50px;</code>
+				<code>}</code>
+			</pre>
+		</div>
+		<div class="wrapper grow">
+			<div class="flex-container">
+				<div class="item">1</div>
+				<div class="item">1</div>
+				<div class="item">1</div>
+			</div>
+			<pre class="code">
+				<code>.container{</code>
+				<code>	width: 300px;</code>
+				<code>}</code>
+				<code>.item{</code>
+				<code>	flex-basis: 50px;</code>
+				<code>	flex-grow: 1;</code>
+				<code>}</code>
+			</pre>
+		</div>
+
+		<style>
+			#grow .flex-container{
+				height: 150px;
+				width: 300px;
+				flex: none;
+			}
+			#grow .item{
+				width: initial;
+				flex-basis: 50px;
+				margin: auto 0;
+			}
+			#grow .grow .item{
+				flex-grow: 1;
+			}
+			#grow .code code{
+				line-height: 1.4;
+				font-size: 22px;
+			}
+		</style>
+
+	</div></article>
+	<article class="slide split" id="flexGrow2"><div>
+		<h2>flex-grow</h2>
+
+		<div class="wrapper">
+			<div class="flex-container">
+				<div class="item">1</div>
+				<div class="item">1</div>
+				<div class="item imp">2</div>
+			</div>
+			<pre class="code">
+				<code>.item{</code>
+				<code>	flex-grow: 1;</code>
+				<code>}</code>
+				<code>.item:last-of-type{</code>
+				<code>	flex-grow: 2;</code>
+				<code>}</code>
+			</pre>
+		</div>
+
+		<style>
+			#flexGrow2 .flex-container{
+				height: 150px;
+				width: 300px;
+				flex: none;
+			}
+			#flexGrow2 .item{
+				width: initial;
+				flex-basis: 50px;
+				margin: auto 0;
+			}
+			#flexGrow2 .item{
+				flex: 1;
+			}
+			#flexGrow2 .item:last-of-type{
+				flex: 2;
+			}
+			#flexGrow2 .code code{
+				line-height: 1.4;
+				font-size: 22px;
+			}
+		</style>
+
+	</div></article>
+	<article class="slide split shrink-default"><div>
+		<h2>По умолчанию элементы сжимаются</h2>
+
+		<div class="wrapper">
+			<div class="flex-container">
+				<div class="item">1</div>
+				<div class="item">2</div>
+				<div class="item">3</div>
+			</div>
+			<pre class="code">
+				<code>.flex-container{</code>
+				<code>	width: 200px;</code>
+				<code>}</code>
+				<code>.item{</code>
+				<code>	width: 100px;</code>
+				<code>}</code>
+			</pre>
+		</div>
+
+		<style>
+			.shrink-default .flex-container{
+				width: 200px;
+				height: 200px;
+				flex: none !important;
+			}
+			.shrink-default .item{
+				width: 100px;
+				/*flex-shrink: 0;*/
+			}
+			.shrink-default .code{
+				margin-left: 200px;
+			}
+		</style>
+
+	</div></article>
+	<article class="slide split shrink-default magic"><div>
+		<h2>По умолчанию элементы сжимаются</h2>
+
+		<div class="wrapper">
+			<div class="flex-container">
+				<div class="item">1</div>
+				<div class="item">2</div>
+				<div class="item">3</div>
+			</div>
+			<pre class="code">
+				<code>.flex-container{</code>
+				<code>	width: 200px;</code>
+				<code>}</code>
+				<code>.item{</code>
+				<code>	width: 100px;</code>
+				<code>	<mark>flex-shrink: 0;</mark></code>
+				<code>}</code>
+			</pre>
+		</div>
+
+		<style>
+			.shrink-default .flex-container{
+				width: 200px;
+				height: 200px;
+				flex: none;
+			}
+			.shrink-default .item{
+				width: 100px;
+			}
+			.shrink-default.magic .item{
+				flex-shrink: 0;
+			}
+			.shrink-default .code{
+				margin-left: 200px;
+			}
+		</style>
+
+	</div></article>
+	<article class="slide split grow-vs-flex"><div>
+		<h2>Магия</h2>
+
+		<div class="wrapper">
+			<div class="flex-container">
+				<div class="item">short</div>
+				<div class="item">loooooooooong</div>
+			</div>
+			<pre class="code">
+				<code>.item{</code>
+				<code>	flex-grow: 1;</code>
+				<code>}</code>
+			</pre>
+		</div>
+		<div class="wrapper fix">
+			<div class="flex-container">
+				<div class="item">short</div>
+				<div class="item">loooooooooong</div>
+			</div>
+			<pre class="code">
+				<code>.item{</code>
+				<code>	flex: 1; <mark class="comment">/* 1 1 0%*/</mark></code>
+				<code>}</code>
+			</pre>
+		</div>
+
+		<style>
+			.grow-vs-flex .item{
+				flex-grow: 1;
+				width: initial;
+			}
+			.grow-vs-flex .fix .item{
+				flex: 1;
+			}
+			.grow-vs-flex .flex-container{
+				height: 150px;
+			}
+		</style>
+
+	</div></article>
+	<article class="slide shout"><div>
+		<img src="images/magic.svg" width="1000" style="margin-left: -110px;" alt="">
+	</div></article>
+	<article class="slide"><div>
+		<h2>Эволюция Flexbox</h2>
+
+		<ul>
+			<li>2009 - display: box;</li>
+			<li>2011 - display: flexbox;</li>
+			<li>2012 - display: flex;</li>
+		</ul>
+	</div></article>
+	<article class="slide cover w h"><div>
+
+	<img src="images/caniuse.png" alt="">
+
+	</div></article>
+	<article class="slide block"><div>
+		<h2>Сдвинем блок вправо без flexbox</h2>
+
+		<div class="cont">
+			<div class="wrapper">
+				<div class="block"></div>
+			</div>
+		</div>
+
+		<style>
+			.block .code{
+				margin-left: 100px;
+			}
+			.block .cont{
+				display: flex;
+			}
+			.block .wrapper{
+				background-color: #1D1F20;
+				height: 300px;
+				width: 300px;
+			}
+			.block .block{
+				width: 100px;
+				height: 100px;
+				background: gold;
+				margin-left: auto;
+			}
+
+		</style>
+
+	</div></article>
+	<article class="slide block"><div>
+		<h2>Сдвинем блок вправо без flexbox</h2>
+
+		<div class="cont">
+			<div class="wrapper">
+				<div class="block"></div>
+			</div>
+			<pre class="code">
+				<code>.block{</code>
+				<code>	margin-left: auto;</code>
+				<code>}</code>
+			</pre>
+		</div>
+
+		<style>
+			.block .code{
+				margin-left: 100px;
+			}
+			.block .cont{
+				display: flex;
+			}
+			.block .wrapper{
+				background-color: #1D1F20;
+				height: 300px;
+				width: 300px;
+			}
+
+			.block .block{
+				width: 100px;
+				height: 100px;
+				background: gold;
+				margin-left: auto;
+			}
+
+		</style>
+
+	</div></article>
+
+	<article class="slide cover w h"><div>
+		<img src="images/flexbox-all-the-things.jpg" height="768" width="1024" alt="">
+	</div></article>
+
+
+
 	<!-- <p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p> -->
 	<!--
 		To hide progress bar from entire presentation
