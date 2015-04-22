@@ -22,14 +22,11 @@
 			margin: auto;
 		}
 
-		.no-margin{
+		.slide .no-margin{
 			margin: 0;
 		}
-		h3{
-			position: relative;
-			top: -40px;
-		}
 		.flex-container{
+			position: relative;
 			height: 400px;
 			background: #1D1F20;
 			display: flex;
@@ -422,70 +419,68 @@
 		<h2 class="no-margin">flex-direction</h2>
 		<h3>Направление главной оси (свойство контейнера)</h3>
 
-		<div class="grid">
-			<div class="flex-container row">
+		<img src="images/flex-direction.png" width="800" alt="">
+
+	</div></article>
+	<article class="slide" id="wrap"><div>
+		<h2 class="no-margin">flex-wrap</h2>
+		<h3 class="no-margin">(свойство контейнера)</h3>
+
+		<div class="wrapper">
+			<div class="flex-container nowrap">
 				<div class="item">1</div>
 				<div class="item">2</div>
 				<div class="item">3</div>
 			</div>
-			<div class="flex-container row-reverse">
-				<div class="item">1</div>
-				<div class="item">2</div>
-				<div class="item">3</div>
-			</div>
-			<div class="flex-container column">
-				<div class="item">1</div>
-				<div class="item">2</div>
-				<div class="item">3</div>
-			</div>
-			<div class="flex-container column-reverse">
+
+			<div class="flex-container wrap">
 				<div class="item">1</div>
 				<div class="item">2</div>
 				<div class="item">3</div>
 			</div>
 		</div>
 
+		<p>Еще есть <code>wrap-reverse</code>, но о нем позже</p>
+
 		<style>
-			#direction .flex-container::before{
+			#wrap .wrapper{
+				display: flex;
+				justify-content: space-between;
+			}
+			#wrap .flex-container{
+				height: initial;
+				padding-top: 50px;
+				width: 300px;
+				align-content: flex-end;
+				align-items: flex-end;
+			}
+			#wrap .item{
+				flex-shrink: 0;
+				margin: 10px;
+			}
+			#wrap .wrap{
+				flex-flow: wrap;
+			}
+			#wrap .wrap::before{
+				content: "flex-wrap: wrap;";
 				color: white;
-				position: absolute;
-				left: 10px;
 				font-family: monospace;
-				font-size: 22px;
-			}
-			#direction .row::before{
-				content: "flex-direction: row; (default)";
-			}
-			#direction .row-reverse{
-				flex-direction: row-reverse;
-			}
-			#direction .row-reverse::before{
-				content: "flex-direction: row-reverse;";
-			}
-			#direction .column{
-				flex-direction: column;
-			}
-			#direction .column::before{
+				position: absolute;
 				top: 0;
-				content: "flex-direction: column;";
+				left: 10px;
 			}
-			#direction .column-reverse{
-				flex-direction: column-reverse;
+			#wrap .nowrap{
+				flex-flow: nowrap;
 			}
-			#direction .column-reverse::before{
-				content: "flex-direction: column-reverse;";
+			#wrap .nowrap::before{
+				content: "flex-wrap: nowrap; (default)";
+				color: white;
+				font-family: monospace;
+				position: absolute;
 				top: 0;
-			}
-			#direction .column .item,
-			#direction .column-reverse .item{
-				height: 30px;
-				margin: 0 auto;
-			}
-			#direction .column{
-				justify-content: flex-end;
+				left: 10px;
 			}
 		</style>
-
 	</div></article>
 	<!-- <p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p> -->
 	<!--
