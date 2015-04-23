@@ -395,12 +395,10 @@
 	<article class="slide cover w h"><div>
 		<img src="images/props.jpg" alt="">
 	</div></article>
-	<article class="slide split"><div>
+	<article class="slide split" id="display"><div>
 		<h2>Display</h2>
 
 		<div class="wrapper">
-
-
 			<div class="flex-container">
 			  <div class="item">1</div>
 			  <div class="item">2</div>
@@ -414,6 +412,9 @@
 		</div>
 
 		<style>
+			#display .item{
+				margin: 0;
+			}
 			.split .flex-container{
 				height: 250px;
 			}
@@ -627,6 +628,9 @@
 		<img src="images/align-content.svg" style="display: block; margin: 0 auto" width="500" alt="">
 
 	</div></article>
+	<article class="slide shout"><div>
+		<h2>Свойства дочерних элементов</h2>
+	</div></article>
 	<article class="slide split order"><div>
 		<h2>order</h2>
 
@@ -747,6 +751,34 @@
 			<code style="font-size: 21px; white-space: nowrap;">flex: none | [ &lt;'flex-grow'> &lt;'flex-shrink'>? || &lt;'flex-basis'> ]</code>
 			<h3>По умолчанию:</h3>
 			<code style="font-size: 21px;">flex: 0 1 auto;</code>
+	</div></article>
+	<article class="slide" id="initial"><div>
+		<h2>Flex</h2>
+
+		<div class="flex-container gt">
+			<div class="item">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+		</div>
+		<div class="flex-container lt">
+			<div class="item">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+		</div>
+
+		<style>
+			#initial .flex-container{
+				height: 200px;
+				width: 200px;
+			}
+			#initial .item{
+				flex: none;
+			}
+			#initial .lt{
+				width: 400px;
+			}
+		</style>
+
 	</div></article>
 	<article class="slide"><div>
 		<h2>flex-basis</h2>
